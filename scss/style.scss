@@ -1,0 +1,49 @@
+@import "./reset";
+@import "./variables";
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+}
+.main {
+    @include flexCenter()
+}
+.game {
+    width: 400px;
+    margin: 10px;
+}
+.game img {
+    width: 100%;
+}
+
+.game-info {
+    background:#000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    height: 50px;
+    h3 {
+        margin: 0;
+        @extend span
+    }
+    & span {
+        color: #fff;
+    }
+};
+
+@media (max-width:$mobile){
+    .main {
+        display: block;
+    }
+    .game {
+        width: 200px;
+    }
+}
